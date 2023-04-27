@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cbcbcc;
+  -webkit-transition: visibility 3s;
+  -moz-transition: visibility 3s;
+  -o-transition: visibility 3s;
+  transition: visibility 3s;
+
+  &::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border: 16px solid #f0f2f4;
+    border-top-color: #2248a9;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.233);
+    animation: loading 0.75s ease infinite;
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  @keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
